@@ -1,0 +1,71 @@
+Just for fun: Morse Trainer
+
+While I was waiting for tests of an other project, I decided to built a Morse signal trainer. Of course 
+everybody knows Morse code, remember the famous SOS from the sinking of the Titanic (short short 
+short, long long long short short short beeps). So you know already 2 letters, but what about the 
+other 24 and the 10 digits?
+
+The gadget here presented helps you learning the mayor Morse codes. The codes are represented by 
+the blinking of a led and showing the current character + a visual representation of the Morse code  
+on the display.
+
+It is only a little bit usefull to learn Morse codes. Radio amateurs still use it to transmit their 
+messages around the world with low power equipment. Most rescue helicopter pilots know it; 
+people in danger in the wilderness can signal their status with a small mirror using the reflection of 
+the sunlight. And sometimes you hear the beep signals on the radio and may be you wonder what 
+has been said; this is your opportunity to know it.
+
+The gadget is based upon a Arduino Pro mini,  a small OLED display, and the led of the Arduino. Other 
+needed parts are a variable resistor, a pushbutton, and if you want to build a pcb you need some 
+male and female pin headers, a piece of veroboard-prototype board, solder, wire, solder-equipment. 
+The sketch runs in 3 steps. In the first one only SOS is shown. Next all A-Z, 0-9 are shown. Then 
+randomly a character is show by the led, and you must depict it, and after a small the correct 
+character + the  visual representation of the Morse code is shown on the display; at first a random 
+choice is made from the first 4 letter of the alphabet, then from 8 etc. You can skip the rest of a step 
+by pushing the pusbutton.
+
+Of course you can use any Arduino. Possibly you must change pinnumbers, they are all declared by 
+#define statements in the start of the sketch. 
+
+The connection to the display needs some extra attention. On the Arduino Pro mini pins A4 and A5 
+are used for the I2C bus (to the display). This means that extra pins or wires must be soldered to the 
+PCB of this Arduino. Other makes of Arduino may have external pins for the SDA and SCL signals of 
+the I2C bus. 
+ 
+The Oled display is not mandatory but practical, if you want to use this gadget stand-alone, not 
+connected to a PC. The Oled display shows the current character and the Morse code. The current 
+letter is also shown on the serial monitor of the Arduino IDE.  I used a 0.96" Oled SSD1306 128*64 
+pixels with I2C interface.  And therefore the Adafruit_SSD1306 library must be present in the Arduino 
+IDE. Any display will do the job, accompanied by the correct support library, but then you have to 
+amend the sketch for your type of display.
+
+The  variable resistor will vary the speed by which the Morse codes are shown. The value is not 
+critical, 10K will do, 50K also. The resistor is used as a variable voltage divider to an analoge port of 
+the Arduino. the received voltage is translated in delay counter and the current value is shown in the 
+first line of the display.
+
+The pushbutton helps you to end step 2 and 3.  If you press the button for more than 3 seconds, then 
+the rest of that step is skipped. I user a small tactile push button, but any model will do. 
+If you want to build a stand alone gadget, you need a small 50*70 mm veroboard prototype-board, 
+and some pinheaders to mount the parts. However, it is perfectly possible to build this gadget on a 
+breadbord with jumper cables.
+
+This project cost me $6.16 for the individual parts. I order my parts at Ebay; many of the parts come 
+in  larger quantities, so in total I spended more money and therefore I have a modest stock for other 
+ideas.
+
+The gadget is fed with 3 Volt from 2 AA bateries. A switch was added to power on-off the battery. 
+Alternatively, you can also use the power of the PC port, if your Arduino has an USB connector. In 
+case you use a Arduino Pro mini, a FTDI232 board (or simular) is used to load the sketch (and to show 
+the output on the serial monitor in the Arduino IDE). The FTDI board in not needed in standalone 
+operation while a (Oled) display is present.
+
+Regarding the sketch, it contains a lot of comments, so you can easely follow the logic. All delay 
+waiting times are declared in the start of the sketch. It you play with the sketch, you will notice, that 
+any showing of info at the LCD takes a lot of computertime, therefore delay (waiting) times have 
+somewhat unlogical amounts and must be establised by testing.  So if you changed the sketch, you 
+have to amend delay values untill you are pleased.
+
+Wikipedia has an excelent background article on Morse code.
+
+| . . . .  . _  . . . _ .  . | . . _ .  . . _  _ . |

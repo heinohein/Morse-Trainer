@@ -8,10 +8,10 @@ on the display.
 The following files are available:
 
 Doc Morse Trainer, just for fun.txt		documentation on the project, the PCB, the sketch and
-										operating instructions
-Morse trainer pcb.jpg					a picture of the layout of a possible pcb on veroboard
-Map Morse_trainer						contains Morse_trainer.ino, the Arduino sketch
-Map Morse trainer pictures				3 JPG pictures
+										operating instructions.
+Morse trainer pcb.jpg					a picture of the layout of a possible pcb on veroboard.
+Map Morse_trainer						contains Morse_trainer.ino, the Arduino sketch.
+Map Morse trainer pictures				3 JPG pictures.
 
 Prerequisites:
 

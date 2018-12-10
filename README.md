@@ -12,13 +12,16 @@ on the display.
 - "Morse trainer pcb.jpg"					a picture of the layout of a possible pcb on veroboard.
 - "Map Morse_trainer"						contains Morse_trainer.ino, the Arduino sketch.
 - "Map Morse trainer pictures"				3 JPG pictures.
+- "Map Morse Trainer PCB Breadboard" Fritzing files with the PCB layout and a separate file for a breadboard layout.
 
 ## **Prerequisites:**
 
 This is an Arduino based project. You need an Arduino to run it.
 You must be able to download the compiled sketch into your Arduino, therefore
 you must install a recent version of the Arduino IDE.
-See also the file "Doc Morse Trainer, just for fun.txt" for several posibilities/variations regarding the hardware.
+See also the file "Doc Morse Trainer, just for fun.txt" for several possibilities/variations regarding the hardware.
+
+If you want to see Fritzing layout files you have to download the latest version of the program Fritzing from the internet and install it.
 
 ## **Installing:**
 
